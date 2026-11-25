@@ -5,3 +5,4 @@ _pychache_/
 .env
 *.db
 logs/
+*.egg-info/
