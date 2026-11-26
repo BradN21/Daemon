@@ -8,14 +8,6 @@ class PCMonitor:
     def start(self):
         print(f"{self.name} has started!")
 
-        cpu = self.get_cpu_usage()
-        ram = self.get_memory_usage()
-        disk = self.get_disk_usage()
-
-        self.check_system_health(cpu, ram, disk)
-
-        report = self.generate_report(cpu, ram, disk)
-        print(report)
 
     def get_cpu_usage(self):
         usage = psutil.cpu_percent(interval=1)
@@ -63,3 +55,13 @@ class PCMonitor:
         """
 
         return report
+
+    def run_check(self):
+        cpu = self.get_cpu_usage()
+        ram = self.get_memory_usage()
+        disk = self.get_disk_usage()
+
+        self.check_system_health(cpu, ram, disk)
+
+        report = self.generate_report(cpu, ram, disk)
+        print(report)

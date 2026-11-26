@@ -8,7 +8,11 @@ def main():
     print()
 
     app = Application()
-    app.start()
+    try:
+        app.start()
+    except KeyboardInterrupt:
+        print("\nShutdown signal received.")
+        app.stop()
 
 
 
